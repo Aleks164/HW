@@ -1,1 +1,3 @@
-const calc = require("./calc");
+import assignObj from "./calc";
+
+assignObj();

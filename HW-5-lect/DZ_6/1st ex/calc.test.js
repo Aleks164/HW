@@ -1,4 +1,4 @@
-const diff = require("./calc");
+import diff from "./calc";
 
 beforeEach(() => {});
 

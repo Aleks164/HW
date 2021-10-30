@@ -1,4 +1,4 @@
-const calc = function (circle, square) {
+function calc(circle, square) {
   const d = ((4 * circle) / Math.PI) ** (1 / 2);
   const a = square ** (1 / 2);
   if (d < a) {
@@ -6,5 +6,5 @@ const calc = function (circle, square) {
   }
 
   return "no it fits";
-};
-module.exports = calc;
+}
+export default calc;

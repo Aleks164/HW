@@ -1,4 +1,4 @@
-const calc = function () {
+function calc() {
   const date = window.prompt(
     "Pelease input date format with dd.mm.yyyy in the input field"
   );
@@ -6,6 +6,6 @@ const calc = function () {
   const newDate = new Date(day, month - 1, year);
   const dayOfWeek = newDate.toLocaleString("default", { weekday: "long" });
   console.log(dayOfWeek);
-};
+}
 
-module.exports = calc;
+export default calc;

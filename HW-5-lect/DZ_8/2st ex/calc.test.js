@@ -1,4 +1,4 @@
-const calc = require("./calc");
+import calc from "./calc";
 
 it("multiplication table : 7x8=56", () => {
   console.log = jest.fn();

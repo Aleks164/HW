@@ -9,4 +9,4 @@ const diff = function (a, b) {
   return result;
 };
 
-module.exports = diff;
+export default diff;

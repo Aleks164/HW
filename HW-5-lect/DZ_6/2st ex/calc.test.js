@@ -1,4 +1,4 @@
-const isWord = require("./calc");
+import isWord from "./calc";
 
 it('"one word" is false', () => {
   expect(isWord("one word")).toBeFalsy();

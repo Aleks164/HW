@@ -1,4 +1,4 @@
-import { calc } from "./calc";
+import calc from "./calc";
 
 it("returns 28.10.2021 это четверг", () => {
   jest.spyOn(window, "prompt").mockReturnValue("28.10.2021");

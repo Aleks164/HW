@@ -1,7 +1,7 @@
 const isWord = function (string) {
   if (typeof string === "string") {
     const checkString = string.split(" ");
-    if (checkString.length == 1) {
+    if (checkString.length === 1) {
       return true;
     }
     return false;
@@ -9,4 +9,4 @@ const isWord = function (string) {
   return false;
 };
 
-module.exports = isWord;
+export default isWord;

@@ -9,4 +9,4 @@ function assignObj() {
   return console.log(name, age, role);
 }
 
-module.exports = calc;
+export default assignObj;
