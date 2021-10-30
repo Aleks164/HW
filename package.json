@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Aleks164/HW/issues"
   },
-  "homepage": "https://github.com/Aleks164/HW#readme"
+  "homepage": "https://github.com/Aleks164/HW#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
 }
