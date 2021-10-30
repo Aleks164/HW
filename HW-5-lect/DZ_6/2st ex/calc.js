@@ -1,6 +1,6 @@
 const isWord = function (string) {
-  if (typeof string === 'string') {
-    const checkString = string.split(' ');
+  if (typeof string === "string") {
+    const checkString = string.split(" ");
     if (checkString.length == 1) {
       return true;
     }

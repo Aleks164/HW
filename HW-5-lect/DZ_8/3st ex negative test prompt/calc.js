@@ -1,5 +1,5 @@
 const calc = function () {
-  let prom = prompt('Enter a digit from 1 to 100', '50');
+  let prom = prompt("Enter a digit from 1 to 100", "50");
   let N = 0;
   let p = 0;
   let i = 1;
@@ -13,6 +13,6 @@ const calc = function () {
     }
     return console.log(N / p);
   }
-  return console.log('You entered incorrect data');
+  return console.log("You entered incorrect data");
 };
 module.exports = calc;
