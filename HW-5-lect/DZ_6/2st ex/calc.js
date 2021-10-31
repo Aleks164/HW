@@ -1,4 +1,4 @@
-const isWord = function (string) {
+function isWord(string) {
   if (typeof string === "string") {
     const checkString = string.split(" ");
     if (checkString.length === 1) {
@@ -7,6 +7,6 @@ const isWord = function (string) {
     return false;
   }
   return false;
-};
+}
 
 export default isWord;

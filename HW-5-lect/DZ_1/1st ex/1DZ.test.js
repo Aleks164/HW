@@ -1,4 +1,4 @@
-const calc = require("./calc");
+import calc from "./calc";
 
 beforeEach(() => {
   console.log = jest.fn();

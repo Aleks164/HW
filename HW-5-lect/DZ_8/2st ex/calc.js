@@ -6,4 +6,5 @@ function calc() {
   const diffInMinRound = diffInMin.toFixed(0);
   console.log(diffInMinRound);
 }
+calc();
 export default calc;

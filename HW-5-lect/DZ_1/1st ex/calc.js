@@ -1,5 +1,5 @@
-const calc = function (a, b) {
+function calc(a, b) {
   return console.log(`${a * b} ${a + b}`);
-};
+}
 
-module.exports = calc;
+export default calc;

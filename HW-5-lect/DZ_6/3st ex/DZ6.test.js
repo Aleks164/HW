@@ -1,4 +1,4 @@
-const pow = require("./calc");
+import pow from "./calc";
 
 it("pow(1, 44) is 1", () => {
   expect(pow(1, 44)).toBe(1);

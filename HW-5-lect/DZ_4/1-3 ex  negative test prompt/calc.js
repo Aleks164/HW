@@ -1,12 +1,21 @@
 const user = {
   name: "Jonn",
 };
-function assignObj() {
-  const input = prompt("Enter a digit", "15");
+let admin;
+function prompName() {
+  const input = window.prompt("Enter a digit", "15");
   user.age = input;
-  const admin = { ...user, role: "admin" };
+  return user;
+}
+function assignObj() {
+  prompName();
+  admin = { ...user, role: "admin" };
+  return admin;
+}
+function destrAssig() {
+  assignObj();
   const { name, age, role } = admin;
   return console.log(name, age, role);
 }
 
-export default assignObj;
+export { prompName, assignObj, destrAssig };

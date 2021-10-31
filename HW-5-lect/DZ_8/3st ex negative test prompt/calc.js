@@ -1,19 +1,37 @@
-function calc() {
-  let prom = prompt("Enter a digit from 1 to 100", "50");
-  let N = 0;
-  let p = 0;
-  let i = 1;
-  prom = Number(prom);
-  if (prom < 101 && prom > 0) {
-    for (; i <= prom; i++) {
-      console.log(N, i);
-      if (!(i % 2 === 0)) {
-        N += i;
-        p += 1;
-      }
-    }
-    return console.log(N / p);
+function calc(firstdate, seconddate) {
+  const [day, month, year] = firstdate.split(".");
+  const [day2, month2, year2] = seconddate.split(".");
+
+  const newfirstDate = new Date(year, month - 1, day);
+  const newsecondDate = new Date(year2, month2 - 1, day2);
+  function checkFirstDate() {
+    return (
+      newfirstDate.getMonth() == month - 1 &&
+      newfirstDate.getDate() == day &&
+      newfirstDate.getFullYear() == year
+    );
   }
-  return console.log("You entered incorrect data");
+
+  function checkSecondtDate() {
+    return (
+      newsecondDate.getMonth() == month2 - 1 &&
+      newsecondDate.getDate() == day2 &&
+      newsecondDate.getFullYear() == year2
+    );
+  }
+
+  const checkAll =
+    newfirstDate !== "Invalid Date" &&
+    newsecondDate !== "Invalid Date" &&
+    checkFirstDate() &&
+    checkSecondtDate();
+
+  if (!checkAll) {
+    console.log("wrong date");
+  } else {
+    console.log(
+      newfirstDate < newsecondDate ? "first is older" : "second is older"
+    );
+  }
 }
 export default calc;

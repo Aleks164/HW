@@ -1,6 +1,6 @@
-const calc = function (aString, bString) {
+function calc(aString, bString) {
   const a = String(aString).length + String(bString).length;
   console.log(a);
-};
+}
 
-module.exports = calc;
+export default calc;
