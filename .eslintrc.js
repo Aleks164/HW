@@ -23,6 +23,7 @@ module.exports = {
     "no-alert": "off",
     eqeqeq: 1,
     "consistent-return": "warn",
+    "no-useless-escape": "warn",
   },
   plugins: ["jest"],
 };
