@@ -1,7 +1,5 @@
 import diff from "./calc";
 
-beforeEach(() => {});
-
 it("if diff(4,5) then 1", () => {
   expect(diff(4, 5)).toBe(1);
 });
