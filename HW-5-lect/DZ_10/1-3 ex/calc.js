@@ -5,9 +5,10 @@ function regExp() {
   );
   const dateRegExp = /^\d\d\.\d\d\.\d\d\d\d$/;
   const testDate = dateRegExp.test(data);
-  const numberRegExp = /[\d\-\+][\-\d{1,10}]{1,10}/g;
+  const numberRegExp = /^((8|\+7)[- ]?)?(\(?\d{3}\)?[- ]?)?[\d\- ]+$/g;
   const testNumber = numberRegExp.test(data);
-  const matchNumber = data.match(numberRegExp);
+  const regExpForWronNumb = /\d/g;
+  const matchNumber = data.match(regExpForWronNumb);
   const emailRegExp = /[-.\w]+@([\w-]+\.)+[\w]{2,5}/g;
   const testEmail = emailRegExp.test(data);
   if (testDate) {
