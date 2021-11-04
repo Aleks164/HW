@@ -1,37 +1,59 @@
-const divP = document.querySelector("#divP");
-const inputEl = document.querySelector("input");
-const hide = document.querySelector("#hide");
-
+let divP;
+let input;
+let hide;
 function addEl() {
+  divP = document.querySelector("#divP");
+  input = document.querySelector("input");
+
   const newP = document.createElement("p");
-  const pText = inputEl.value;
+  const pText = input.value;
   newP.className = "pEl";
   newP.innerText = pText;
   divP.prepend(newP);
-  inputEl.value = "";
+  input.value = "";
 }
 
-inputEl.addEventListener("input", () => {
-  hide.style.visibility = "visible";
-  const inputvalue = inputEl.value;
-  if (inputvalue === "") {
-    hide.style.visibility = "hidden";
-  }
-});
+function createDom(el) {
+  el.innerHTML = `
+  <div id="divP">
+  <p class="pEl">123</p>
+  <p class="pEl">123</p>
+  <p class="pEl">23</p>
+  </div>
+    <form>
+      <input id="userInput" placeholder="Type here" required autofocus />
+      <button id="hide" style="visibility: hidden">Push me</button>
+    </form>
+  `;
 
-hide.addEventListener("click", (ev) => {
-  ev.preventDefault();
-  hide.style.visibility = "hidden";
-  const pElList = divP.getElementsByClassName("pEl");
-  const el = [...pElList];
-  if (pElList.length < 5) {
-    addEl();
-  } else {
-    divP.innerHTML = "";
-    el.pop();
-    for (let i = 0; i < el.length; i++) {
-      divP.innerHTML += `<p class = "pEl">${el[i].innerHTML}</p>`;
+  input = document.querySelector("input");
+  hide = document.querySelector("#hide");
+
+  input.addEventListener("input", () => {
+    hide.style.visibility = "visible";
+    const inputvalue = input.value;
+    if (inputvalue === "") {
+      hide.style.visibility = "hidden";
     }
-    addEl();
-  }
-});
+  });
+
+  hide.addEventListener("click", (ev) => {
+    ev.preventDefault();
+    hide.style.visibility = "hidden";
+    divP = document.querySelector("#divP");
+    const pElList = divP.getElementsByClassName("pEl");
+    const pArr = [...pElList];
+    if (pElList.length < 5) {
+      addEl();
+    } else {
+      divP.innerHTML = "";
+      pArr.pop();
+      for (let i = 0; i < pArr.length; i++) {
+        divP.innerHTML += `<p class = "pEl">${pArr[i].innerHTML}</p>`;
+      }
+      addEl();
+    }
+  });
+}
+
+export default createDom;
