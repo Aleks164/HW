@@ -4,11 +4,10 @@ let hide;
 function addEl() {
   divP = document.querySelector("#divP");
   input = document.querySelector("input");
-
   const newP = document.createElement("p");
   const pText = input.value;
   newP.className = "pEl";
-  newP.innerText = pText;
+  newP.textContent = pText;
   divP.prepend(newP);
   input.value = "";
 }
@@ -29,7 +28,8 @@ function createDom(el) {
   input = document.querySelector("input");
   hide = document.querySelector("#hide");
 
-  input.addEventListener("input", () => {
+  input.addEventListener(["input", "change"], () => {
+    hide = document.querySelector("#hide");
     hide.style.visibility = "visible";
     const inputvalue = input.value;
     if (inputvalue === "") {

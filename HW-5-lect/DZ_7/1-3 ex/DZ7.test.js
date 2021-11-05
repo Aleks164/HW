@@ -27,7 +27,11 @@ describe("createParagraphList", () => {
     expect(document.querySelector("#hide")).toBeTruthy();
     expect(document.querySelector("#hide").style.visibility).toBe("hidden");
   });
-
+  // it("Checking the button which should visible when input is not empty", () => {
+  //   const input = document.querySelector("#userInput");
+  //   input.value = "input is not empty";
+  //   expect(document.querySelector("#hide").style.visibility).toBe("visible");
+  // });
   it("Checking new <p> after click button", () => {
     const input = document.querySelector("#userInput");
     const button = document.querySelector("#hide");
@@ -47,10 +51,14 @@ describe("createParagraphList", () => {
     const button = document.querySelector("#hide");
     const divP = document.querySelector("#divP");
     for (let i = 0; i < 7; i++) {
-      input.value = "another one";
+      input.value = `another ${i}`;
       button.click();
     }
     expect(divP.childElementCount).toBe(5);
-    // expect(divP.innerHTML).toContain("another one");
+    expect(divP.innerHTML).toContain("another 6");
+    expect(divP.innerHTML).toContain("another 5");
+    expect(divP.innerHTML).toContain("another 4");
+    expect(divP.innerHTML).toContain("another 3");
+    expect(divP.innerHTML).toContain("another 2");
   });
 });
