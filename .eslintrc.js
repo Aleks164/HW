@@ -21,6 +21,11 @@ module.exports = {
     ],
     "no-plusplus": [2, { allowForLoopAfterthoughts: true }],
     "no-alert": "off",
+    eqeqeq: 1,
+    "consistent-return": "warn",
+    "no-useless-escape": "warn",
+    "no-param-reassign": "warn",
+    "import/extensions": "warn",
   },
   plugins: ["jest"],
 };
