@@ -28,7 +28,7 @@ function createDom(el) {
   input = document.querySelector("input");
   hide = document.querySelector("#hide");
 
-  input.addEventListener(["input", "change"], () => {
+  input.addEventListener("input", () => {
     hide = document.querySelector("#hide");
     hide.style.visibility = "visible";
     const inputvalue = input.value;

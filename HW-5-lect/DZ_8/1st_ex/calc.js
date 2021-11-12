@@ -5,12 +5,12 @@ function calc() {
   );
   const [day, month, year] = date.split(".");
   const newDate = new Date(year, month - 1, day);
-  const dayOfWeek = newDate.toLocaleString("default", { weekday: "long" });
+  const dayOfWeek = newDate.toLocaleString("en-US", { weekday: "long" });
   function checkDate() {
     return (
-      newDate.getMonth() == month - 1 &&
-      newDate.getDate() == day &&
-      newDate.getFullYear() == year
+      newDate.getMonth() === Number(month - 1) &&
+      newDate.getDate() === Number(day) &&
+      newDate.getFullYear() === Number(year)
     );
   }
   const checkAll = newDate !== "Invalid Date" && checkDate();

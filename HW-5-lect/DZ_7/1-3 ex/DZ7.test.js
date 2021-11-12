@@ -1,4 +1,4 @@
-import createDom from "./3";
+import createDom from "./calc";
 
 describe("createParagraphList", () => {
   beforeEach(() => {
@@ -22,16 +22,17 @@ describe("createParagraphList", () => {
     expect(document.querySelector("#userInput")).toBeTruthy();
   });
   it("Checking the button which should be hide with empty input", () => {
-    const input = document.querySelector("#userInput");
-    input.value = "";
     expect(document.querySelector("#hide")).toBeTruthy();
     expect(document.querySelector("#hide").style.visibility).toBe("hidden");
   });
-  // it("Checking the button which should visible when input is not empty", () => {
-  //   const input = document.querySelector("#userInput");
-  //   input.value = "input is not empty";
-  //   expect(document.querySelector("#hide").style.visibility).toBe("visible");
-  // });
+  it("Checking the button which should visible when input is not empty", () => {
+    const input = document.querySelector("#userInput");
+    const button = document.querySelector("#hide");
+    const event = new Event("input");
+    input.value = "123";
+    input.dispatchEvent(event);
+    expect(button.style.visibility).toBe("visible");
+  });
   it("Checking new <p> after click button", () => {
     const input = document.querySelector("#userInput");
     const button = document.querySelector("#hide");

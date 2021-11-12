@@ -6,17 +6,17 @@ function calc(firstdate, seconddate) {
   const newsecondDate = new Date(year2, month2 - 1, day2);
   function checkFirstDate() {
     return (
-      newfirstDate.getMonth() == month - 1 &&
-      newfirstDate.getDate() == day &&
-      newfirstDate.getFullYear() == year
+      newfirstDate.getMonth() === Number(month - 1) &&
+      newfirstDate.getDate() === Number(day) &&
+      newfirstDate.getFullYear() === Number(year)
     );
   }
 
   function checkSecondtDate() {
     return (
-      newsecondDate.getMonth() == month2 - 1 &&
-      newsecondDate.getDate() == day2 &&
-      newsecondDate.getFullYear() == year2
+      newsecondDate.getMonth() === Number(month2 - 1) &&
+      newsecondDate.getDate() === Number(day2) &&
+      newsecondDate.getFullYear() === Number(year2)
     );
   }
 

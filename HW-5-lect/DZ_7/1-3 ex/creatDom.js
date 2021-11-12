@@ -1,4 +1,4 @@
-import createDom from "./3.js";
+import createDom from "./calc.js";
 
 const el = document.querySelector("#cont");
 createDom(el);
